@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gama Novaes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="opcoes">
+            
+        <img id="imagem-botao" class="imglogo" src="img/logogamanovaes_branca.png" alt="">
+
+       <nav class="barraDePesquisa">
+        <input id="Pesquisar"  type="text" placeholder="Pesquisar produtos">
+        <button class="enviar" type="submit">Pesquisar</button>
+       </nav>
+        </div>
+
+            <nav class="navbar">
+                <img class="imgbotao" onclick="MudarDeCor()" src="img/botao.png" alt="ModoEscuro">
+                <a class="mostrar-contatos" onclick="MostrarContatos()" href="#">Contatos</a>
+                <a href="pagProdutos.html">Produtos</a>
+                <a href="pagOrcamento.html">Finalizar orçamento</a>
+
+            </nav>
+        
+    </header>
+    
+    <div class="orçamento-container">
+        <div class="listaDeItens">
+            <h1 class="textoOrçamento">Finalizar Orçamento</h1>
+            <ul id="listaDeItens">
+            </ul>
+        </div>
+
+        <div class="formulario-Orçamento">
+            <form id="meuCadastro">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <label for="idade">idade</label>
+                <input type="number" id="idade" placeholder="Sua idade" required>
+                <label for="telefone">Telefone para contato</label>
+                <input type="tel" id="telefone" placeholder="(DDD) 9999-9999" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Seu email" required>
+                <label for="mensagem">Mensagem / Observação</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite aqui sua mensagem..." required></textarea>
+        
+
+                <button type="submit">Finalizar Orçamento</button>
+                <br>
+            </form>
+            <p class="total">Total: <strong id="total">R$0,00</strong></p>
+        </div>
+    </div>
+
+    <div class="produtos">
+        <h1 class="prod">PRODUTOS</h1>
+
+        <h2 class="prod">Ferramentas</h2>
+        <div class="ferramenta">
+            <img class="imagens" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/CordlessDrill.jpg" alt="Ferramenta 1" onclick="adicionarItem('Furadeira', 200)">
+            <img class="imagens" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqTSYrf2BwORxKCq2OaLP1up4HtIKCaIBJHw&s" alt="Ferramenta 2" onclick="adicionarItem('Parafusadeira ', 150)">
+            <img class="imagens" src="https://madeirasgasometro.vtexassets.com/arquivos/ids/174359-800-auto?v=637139100535670000&width=800&height=auto&aspect=true" alt="Ferramenta 3" onclick="adicionarItem('Serra Circular ', 300)">
+            <img class="imagens" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCzKdK5-mRPCtDDJZSyteK5Fwp-UzRlPayCA&s" alt="Ferramenta 4" onclick="adicionarItem('Lixadeira', 250)">
+        </div>
+
+        <h2 class="prod">Tintas </h2>
+        <div class="ferramenta">
+            <img class="imagens" src="https://politintas.vtexassets.com/arquivos/ids/169052-800-800?v=638234831802430000&width=800&height=800&aspect=true" alt="tinta Acrílica" onclick="adicionarItem('Tinta acrilíca', 148)">
+            <img class="imagens" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_Hy93bmVpiUnGFNwTEePuCR3P-do018OEg&s" alt="Tinta 2" onclick="adicionarItem('Tinta suvinil', 116)">
+            <img class="imagens" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmBSuywSb5NPyLLl8KBJsFUcpq3JfFAeVBWQ&s" alt="Tinta 1" onclick="adicionarItem('Tinta Époxi', 259)">
+            <img class="imagens" src="https://cdn.suvinil.com.br/catalog/products/40/image/display/36/1.jpg" alt="Tinta esmalte" onclick="adicionarItem('Tinta esmalte', 12)">
+        </div>
+
+        <h2 class="prod">Massas</h2>
+        <div class="ferramenta">
+            <img class="imagens" src="https://cdn.leroymerlin.com.br/products/cimento_poty_todas_as_obras_cp_ii_z_32_50kg_89368664_0001_600x600.jpg" alt="Massa 1" onclick="adicionarItem('cimento / poty', 39)">
+            <img class="imagens" src="https://balaroti.vtexassets.com/arquivos/ids/3055350/12387.jpg?v=638234658847370000" alt="Massa 2" onclick="adicionarItem('Argamassa / votomassa ', 56)">
+            <img class="imagens" src="https://th.bing.com/th/id/OIP.s2OrAz5dTfkzDuJYrPE-bgHaEd?rs=1&pid=ImgDetMain" alt="Massa 3" onclick="adicionarItem('cal hidratada / itaú', 29,99)">
+            <img class="imagens" src="https://th.bing.com/th/id/OIP.cEfkKZFZckNlHnnSLbo_WAHaHa?rs=1&pid=ImgDetMain" alt="Massa 4" onclick="adicionarItem('rejunte cerâmica / votomassa  ', 12)">
+        </div>
+    </div>
+
+    <script>
+        function MudarDeCor() {
+            document.body.classList.toggle("MudarDeCor");
+        }
+
+        function MostrarContatos() {
+            alert("Contatos:\nEmail: email@example.com\nTelefone: (99) 99999-9999");
+        }
+
+        const imagemBotao = document.getElementById("imagem-botao");
+        imagemBotao.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        const formulario = document.getElementById("meuCadastro");
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const nome = document.getElementById("nome").value;
+            const telefone = document.getElementById("telefone").value;
+
+            const itens = Array.from(document.querySelectorAll('#listaDeItens li'))
+                .map(item => `- ${item.textContent}`)
+                .join('\n');
+
+            const total = document.getElementById('total').innerText;
+
+            const mensagem = `Olá, me chamo ${nome}.\nMeu telefone: ${telefone}\n\nGostaria de solicitar um orçamento com os seguintes itens:\n${itens}\n\nTotal estimado: ${total}`;
+
+            const numeroWhats = "5599999999999"; 
+            const link = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(link, '_blank');
+
+            alert("Olá, " + nome + "!\nOrçamento enviado com sucesso!");
+        });
+
+        function adicionarItem(nome, valor) {
+            const listaDeItens = document.getElementById('listaDeItens');
+            const item = document.createElement('li');
+            item.innerHTML = `${nome} - R$${valor} <button onclick="removerItem(this)">Remover</button>`;
+            listaDeItens.appendChild(item);
+            calcularTotal();
+        }
+
+        function removerItem(button) {
+            const item = button.parentElement;
+            item.remove();
+            calcularTotal();
+        }
+
+        function calcularTotal() {
+            const itens = document.querySelectorAll('#listaDeItens li');
+            let total = 0;
+
+            itens.forEach(item => {
+                const texto = item.textContent;
+                const valorTexto = texto.match(/R\$(\d+(?:\.\d+)?)/); // Pega o número após R$
+                if (valorTexto) {
+                    total += parseFloat(valorTexto[1]);
+                }
+            });
+
+            document.getElementById('total').innerText = "R$" + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
