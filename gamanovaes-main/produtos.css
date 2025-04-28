@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+body{
+    font-size: larger;
+    background-color: white;
+    color: black;
+}
+
+body.MudarDeCor{
+    background-color: rgb(19, 19, 19);
+    color: white;
+}
+
+body.MudarDeCor .produto-card {
+    background-color: #1e1e1e;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+body.MudarDeCor header{
+    background-color:  rgb(37, 37, 37);
+    color: white;
+}
+
+body.MudarDeCor input{
+    background-color: rgb(19, 19, 19);
+    color: white;
+    border-radius: 20px;
+    
+}
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    background-color: rgb(102, 0, 0);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+input{
+    background-color: rgb(73, 1, 1);
+    color: white;
+    border-radius: 20px;
+    
+}
+
+div.logo a img{
+    width: 80px;
+
+}
+
+.MudarDeCor .enviar{
+    background-color: rgb(19, 19, 19);
+    color: white;
+
+}
+
+.MudarDeCor .enviar:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+.MudarDeCor #Pesquisar{
+    background-color: rgb(19, 19, 19);
+    color: white;
+
+}
+
+.MudarDeCor #Pesquisar:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+#Pesquisar {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    width: 15vw;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(73, 1, 1);
+    border: 1px solid rgb(255, 255, 255);
+    padding-left: 10px;
+    font-size: 10px;
+    margin-left: 0px;
+}
+
+#Pesquisar:hover {
+    background-color: rgb(160, 62, 62);
+  }
+
+  ::placeholder {
+    color: white;
+}
+
+.barraDePesquisa {
+    gap: 5px;
+}
+
+.enviar{
+    width: 80px;
+    height: 30px;
+    border: 0;
+    border-radius: 50px;
+    background-color: rgb(73, 1, 1);
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.enviar:hover{
+    background-color: rgb(160, 62, 62);
+}
+
+.imglogo {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.imgbotao {
+    border: 0;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+    gap: 10px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    
+}
+
+
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(252, 248, 248);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.container-produtos{
+    margin-top: 100px;
+}
+
+
+
+@media (max-width:490px){
+    header{
+        flex-direction: column;
+    }
+    .pesquisar{
+        margin-top: 0;
+    }
+    nav{
+        margin-top: 5px;
+    }
+    figure{
+        margin-top: 5px;
+    }
+
+
+}
+
+
+section{
+    display: flex;
+   margin-top: 30px;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 10px;
+    padding: 0 20px;
+   
+}
+.produto-card{
+    background-color: royalblue;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+
+}
+.produto-card:hover {
+    transform: translateY(-5px);
+}
+
+img.foto-do-produto {
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 490px){
+    section{
+        flex-direction: column;
+        align-items: center;
+    }
+
+  
+    .produto-card{
+        width: 100%;
+        margin-bottom: 10px;
+        
+    }
+    img.foto-do-produto {
+        width: 100%;
+        height: auto;
+    }
+}
